@@ -2,6 +2,8 @@ package jak.dut.Investment.service;
 
 import jak.dut.Investment.dto.CalculationDTO;
 import jak.dut.Investment.model.calculation.Calculation;
+import jak.dut.Investment.model.calculation.CalculationType;
+import jak.dut.Investment.model.investment.CapitalizationPeriod;
 import jak.dut.Investment.repository.CalculotionRepo;
 import org.springframework.stereotype.Service;
 
@@ -29,10 +31,10 @@ public class CalculationServiceImpl implements CalculationService {
     }
 
     @Override
-    public void addCalculation(CalculationDTO calculationDTO) {
+    public void addCalculation(Double amount, CalculationType calculationType) {
         Calculation newCalculation = new Calculation();
-        newCalculation.setAmount(calculationDTO.getAmount());
-        newCalculation.setCalculationType(calculationDTO.getCalculationType());
+        newCalculation.setAmount(amount);
+        newCalculation.setCalculationType(calculationType);
         LocalDate localDate = getLocalDate();
         newCalculation.setCalculationDate(localDate);
         //TODO !!

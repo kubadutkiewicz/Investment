@@ -27,4 +27,9 @@ public class CalculationController {
         System.out.println("Investment type: " + investment + allCalculationByInvestment);
     }
 
+    @PostMapping("/{id}/calculations")
+    public void calculateInvestment(@PathVariable("id") Long investmentId){
+
+    }
+
 }

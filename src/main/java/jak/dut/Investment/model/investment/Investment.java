@@ -19,6 +19,15 @@ public class Investment {
     private LocalDate startInvestmentDate;
     private LocalDate endInvestmentDate;
 
+    public Investment(Long id, String name, Double rate, CapitalizationPeriod capitalizationPeriod, LocalDate startInvestmentDate, LocalDate endInvestmentDate) {
+        this.id = id;
+        this.name = name;
+        this.rate = rate;
+        this.capitalizationPeriod = capitalizationPeriod;
+        this.startInvestmentDate = startInvestmentDate;
+        this.endInvestmentDate = endInvestmentDate;
+    }
+
     public Long getId() {
         return id;
     }
