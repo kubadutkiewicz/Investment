@@ -1,22 +1,20 @@
 package jak.dut.Investment.dto;
 
-import jak.dut.Investment.model.calculation.CalculaltionAlgorithmStrategy;
 import jak.dut.Investment.model.calculation.CalculationType;
-import jak.dut.Investment.model.calculation.resolver.CalculationResolver;
 
 import java.math.BigDecimal;
 
 public class CalculationDTO {
 
-    private final BigDecimal amount;
+    private final Double amount;
     private final CalculationType calculationType;
 
-    public CalculationDTO(BigDecimal amount, CalculationType calculationType) {
+    public CalculationDTO(Double amount, CalculationType calculationType) {
         this.amount = amount;
         this.calculationType = calculationType;
     }
 
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 

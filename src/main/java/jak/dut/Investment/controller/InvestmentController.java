@@ -28,9 +28,9 @@ public class InvestmentController {
     }
 
     @PostMapping
-    public String addInvestment(Investment investment) {
+    public void addInvestment(Investment investment) {
         Investment addedInvestment = investmentService.addInvestment(investment);
         Duration periodInDays = Duration.between(addedInvestment.getEndInvestmentDate(), addedInvestment.getStartInvestmentDate());
-        return ("ID: " + addedInvestment.getId() + "Name: " + addedInvestment.getName() + "Interest: " + addedInvestment.getRate() + "Period in days: " + periodInDays);
+        System.out.println("ID: " + addedInvestment.getId() + "Name: " + addedInvestment.getName() + "Interest: " + addedInvestment.getRate() + "Period in days: " + periodInDays);
     }
 }

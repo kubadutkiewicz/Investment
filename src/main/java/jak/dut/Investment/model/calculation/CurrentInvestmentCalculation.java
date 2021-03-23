@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 public class CurrentInvestmentCalculation implements CalculaltionAlgorithmStrategy {
 
     @Override
-    public BigDecimal calculation(Calculation calculation) {
-        BigDecimal value = calculation.getAmount();
+    public Double calculation(Calculation calculation) {
+        Double value = calculation.getAmount();
 
         return null;
     }

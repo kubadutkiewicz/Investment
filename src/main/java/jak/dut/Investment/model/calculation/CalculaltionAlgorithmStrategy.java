@@ -5,6 +5,6 @@ import java.math.BigDecimal;
 @FunctionalInterface
 public interface CalculaltionAlgorithmStrategy {
 
-    BigDecimal calculation(Calculation calculation);
+    Double calculation(Calculation calculation);
 
 }

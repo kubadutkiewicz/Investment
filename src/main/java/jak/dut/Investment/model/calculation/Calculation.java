@@ -12,7 +12,7 @@ public class Calculation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal amount;
+    private Double amount;
     private LocalDate calculationDate;
 
     @ManyToOne
@@ -29,11 +29,11 @@ public class Calculation {
         this.id = id;
     }
 
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
