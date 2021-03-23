@@ -1,0 +1,84 @@
+package jak.dut.Investment.model.investment;
+
+import jak.dut.Investment.model.investment.capitalizationPeriod.CapitalizationPeriod;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.time.LocalDate;
+
+@Entity
+public class Investment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private Double interest;
+    private CapitalizationPeriod capitalizationPeriod;
+    private LocalDate startInvestmentDate;
+    private LocalDate endInvestmentDate;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Double interest) {
+        this.interest = interest;
+    }
+
+
+    public CapitalizationPeriod getCapitalizationPeriod() {
+        return capitalizationPeriod;
+    }
+
+    public void setCapitalizationPeriod(CapitalizationPeriod capitalizationPeriod) {
+        this.capitalizationPeriod = capitalizationPeriod;
+    }
+
+    public LocalDate getStartInvestmentDate() {
+        return startInvestmentDate;
+    }
+
+    public void setStartInvestmentDate(LocalDate startInvestmentDate) {
+        this.startInvestmentDate = startInvestmentDate;
+    }
+
+    public LocalDate getEndInvestmentDate() {
+        return endInvestmentDate;
+    }
+
+    public void setEndInvestmentDate(LocalDate endInvestmentDate) {
+        this.endInvestmentDate = endInvestmentDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Investment{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", interest=" + interest +
+                ", capitalizationPeriod=" + capitalizationPeriod +
+                ", startInvestmentDate=" + startInvestmentDate +
+                ", endInvestmentDate=" + endInvestmentDate +
+                '}';
+    }
+}
