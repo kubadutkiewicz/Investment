@@ -1,6 +1,5 @@
 package jak.dut.Investment.model.calculation;
 
-import jak.dut.Investment.model.calculation.resolver.CalculationResolver;
 import jak.dut.Investment.model.investment.Investment;
 
 import javax.persistence.*;

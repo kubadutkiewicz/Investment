@@ -22,7 +22,7 @@ public class CalculationServiceImpl implements CalculationService {
     }
 
     @Override
-    public List<Calculation> fingAllCalculationByInvestmentId(Long investmentId) {
+    public List<Calculation> findAllCalculationByInvestmentId(Long investmentId) {
         List<Calculation> allCalculationByInvestmentId = new ArrayList<>();
         calculotionRepo.findAllByInvestmentId(investmentId).iterator().forEachRemaining(allCalculationByInvestmentId::add);
         return allCalculationByInvestmentId;

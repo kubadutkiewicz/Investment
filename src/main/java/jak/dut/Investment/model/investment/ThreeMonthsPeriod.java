@@ -1,4 +1,4 @@
-package jak.dut.Investment.model.investment.capitalizationPeriod;
+package jak.dut.Investment.model.investment;
 
 public class ThreeMonthsPeriod implements CapitalizationPeriodInterface {
 

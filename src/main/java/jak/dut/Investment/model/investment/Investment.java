@@ -1,7 +1,5 @@
 package jak.dut.Investment.model.investment;
 
-import jak.dut.Investment.model.investment.capitalizationPeriod.CapitalizationPeriod;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +14,7 @@ public class Investment {
     private Long id;
 
     private String name;
-    private Double interest;
+    private Double rate;
     private CapitalizationPeriod capitalizationPeriod;
     private LocalDate startInvestmentDate;
     private LocalDate endInvestmentDate;
@@ -37,12 +35,12 @@ public class Investment {
         this.name = name;
     }
 
-    public Double getInterest() {
-        return interest;
+    public Double getRate() {
+        return rate;
     }
 
-    public void setInterest(Double interest) {
-        this.interest = interest;
+    public void setRate(Double rate) {
+        this.rate = rate;
     }
 
 
@@ -75,7 +73,7 @@ public class Investment {
         return "Investment{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", interest=" + interest +
+                ", interest=" + rate +
                 ", capitalizationPeriod=" + capitalizationPeriod +
                 ", startInvestmentDate=" + startInvestmentDate +
                 ", endInvestmentDate=" + endInvestmentDate +

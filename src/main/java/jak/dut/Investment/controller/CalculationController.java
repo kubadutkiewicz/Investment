@@ -23,7 +23,7 @@ public class CalculationController {
     @GetMapping("/{id}/calculations")
     public void getAllCalculationByInvesmnentId(@PathVariable("id") Long investmentId) {
         Investment investment = investmentService.getInvestmentById(investmentId);
-        List<Calculation> allCalculationByInvestment = calculationService.fingAllCalculationByInvestmentId(investmentId);
+        List<Calculation> allCalculationByInvestment = calculationService.findAllCalculationByInvestmentId(investmentId);
         System.out.println("Investment type: " + investment + allCalculationByInvestment);
     }
 

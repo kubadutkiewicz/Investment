@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CalculationService {
 
-    List<Calculation> fingAllCalculationByInvestmentId(Long investmentId);
+    List<Calculation> findAllCalculationByInvestmentId(Long investmentId);
 
     void addCalculation(CalculationDTO calculationDTO);
 

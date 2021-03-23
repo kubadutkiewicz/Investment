@@ -46,7 +46,7 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Override
     public Investment addInvestment(Investment investment) {
         investment.setName(investment.getName());
-        investment.setInterest(investment.getInterest());
+        investment.setRate(investment.getRate());
         investment.setCapitalizationPeriod(investment.getCapitalizationPeriod());
         investment.setStartInvestmentDate(investment.getStartInvestmentDate());
         investment.setEndInvestmentDate(investment.getEndInvestmentDate());
