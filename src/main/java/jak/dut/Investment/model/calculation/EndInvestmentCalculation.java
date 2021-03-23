@@ -1,6 +1,5 @@
 package jak.dut.Investment.model.calculation;
 
-import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
 

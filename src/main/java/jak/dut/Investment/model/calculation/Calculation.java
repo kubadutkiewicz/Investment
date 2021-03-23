@@ -3,7 +3,6 @@ package jak.dut.Investment.model.calculation;
 import jak.dut.Investment.model.investment.Investment;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -19,7 +18,7 @@ public class Calculation {
     private Investment investment;
 
     private CalculationType calculationType;
-    private BigDecimal profit;
+    private Double profit;
 
     public Long getId() {
         return id;
@@ -62,11 +61,11 @@ public class Calculation {
         this.calculationType = calculationType;
     }
 
-    public BigDecimal getProfit() {
+    public Double getProfit() {
         return profit;
     }
 
-    public void setProfit(BigDecimal profit) {
+    public void setProfit(Double profit) {
         this.profit = profit;
     }
 
