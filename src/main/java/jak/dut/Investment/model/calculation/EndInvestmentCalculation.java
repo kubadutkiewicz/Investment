@@ -1,8 +1,5 @@
 package jak.dut.Investment.model.calculation;
 
-import java.time.Duration;
-import java.time.LocalDate;
-
 public class EndInvestmentCalculation implements CalculaltionAlgorithmStrategy {
 
     @Override

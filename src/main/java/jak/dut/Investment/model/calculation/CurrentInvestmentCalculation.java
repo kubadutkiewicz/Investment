@@ -4,7 +4,6 @@ public class CurrentInvestmentCalculation implements CalculaltionAlgorithmStrate
 
     @Override
     public Double calculation(Calculation calculation) {
-
         return null;
     }
 }
