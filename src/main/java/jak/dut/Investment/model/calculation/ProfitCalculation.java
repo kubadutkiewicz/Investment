@@ -1,6 +1,6 @@
 package jak.dut.Investment.model.calculation;
 
-import jak.dut.Investment.model.calculation.resolver.CalculationResolver;
+import jak.dut.Investment.service.resolver.CalculationResolver;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

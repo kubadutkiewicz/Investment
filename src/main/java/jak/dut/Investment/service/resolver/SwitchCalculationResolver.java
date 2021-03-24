@@ -1,4 +1,4 @@
-package jak.dut.Investment.model.calculation.resolver;
+package jak.dut.Investment.service.resolver;
 
 import jak.dut.Investment.model.calculation.CalculaltionAlgorithmStrategy;
 import jak.dut.Investment.model.calculation.CalculationType;

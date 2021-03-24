@@ -1,11 +1,13 @@
 package jak.dut.Investment.controller;
 
 import jak.dut.Investment.model.calculation.Calculation;
+import jak.dut.Investment.model.calculation.CalculationType;
 import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.service.CalculationService;
 import jak.dut.Investment.service.InvestmentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -28,8 +30,9 @@ public class CalculationController {
     }
 
     @PostMapping("/{id}/calculations")
-    public void calculateInvestment(@PathVariable("id") Long investmentId){
-
+    public Calculation calculateInvestment(@PathVariable("id") Long investmentId, @RequestParam BigDecimal amount, @RequestParam CalculationType calculationType) {
+        Calculation calculation = calculationService.addCalculation(amount, calculationType, investmentId);
+        return calculation;
     }
 
 }

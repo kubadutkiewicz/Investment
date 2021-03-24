@@ -34,15 +34,16 @@ public class CalculationServiceImpl implements CalculationService {
     }
 
     @Override
-    public void addCalculation(BigDecimal amount, CalculationType calculationType, Investment investment) {
+    public Calculation addCalculation(BigDecimal amount, CalculationType calculationType, Long investmentId) {
         Calculation newCalculation = new Calculation();
         newCalculation.setAmount(amount);
         newCalculation.setCalculationType(calculationType);
         LocalDate localDate = getLocalDate();
         newCalculation.setCalculationDate(localDate);
-        newCalculation.setInvestment(investment);
+        newCalculation.setInvestment(investmentService.getInvestmentById(investmentId));
         newCalculation.setCalculationType(calculationType);
         newCalculation.setProfit(profitCalculation.calculateProfit(newCalculation));
+        return newCalculation;
     }
 
     private LocalDate getLocalDate() {

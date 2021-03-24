@@ -29,8 +29,7 @@ public class InvestmentServiceImpl implements InvestmentService {
                 .collect(Collectors.toList());
     }
 
-
-    private InvestmentDTO convertToInvestmentDTO(Investment investment) {
+    public InvestmentDTO convertToInvestmentDTO(Investment investment) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         InvestmentDTO investmentDTO = modelMapper
@@ -50,5 +49,4 @@ public class InvestmentServiceImpl implements InvestmentService {
         investmentRepo.save(investment);
     return investment;
     }
-
 }

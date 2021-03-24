@@ -4,10 +4,7 @@ import jak.dut.Investment.dto.InvestmentDTO;
 import jak.dut.Investment.dto.NewInvestmentDTO;
 import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.service.InvestmentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -29,7 +26,7 @@ public class InvestmentController {
     }
 
     @PostMapping
-    public NewInvestmentDTO addInvestment(Investment investment) {
+    public NewInvestmentDTO addInvestment(@RequestParam Investment investment) {
         investmentService.addInvestment(investment);
         NewInvestmentDTO newInvestmentDTO = setNewInvestmentDTO(investment);
         return newInvestmentDTO;
