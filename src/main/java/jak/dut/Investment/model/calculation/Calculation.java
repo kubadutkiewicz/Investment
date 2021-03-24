@@ -21,6 +21,18 @@ public class Calculation {
     private CalculationType calculationType;
     private BigDecimal profit;
 
+    public Calculation() {
+    }
+
+    public Calculation(Long id, BigDecimal amount, LocalDate calculationDate, Investment investment, CalculationType calculationType, BigDecimal profit) {
+        this.id = id;
+        this.amount = amount;
+        this.calculationDate = calculationDate;
+        this.investment = investment;
+        this.calculationType = calculationType;
+        this.profit = profit;
+    }
+
     public Long getId() {
         return id;
     }

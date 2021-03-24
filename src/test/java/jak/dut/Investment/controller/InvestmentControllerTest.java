@@ -24,7 +24,4 @@ class InvestmentControllerTest {
         Assert.assertEquals(29, investmentController.getPeriodInDaysBetweenTwoDates(investment));
         Assert.assertNotEquals(30, investmentController.getPeriodInDaysBetweenTwoDates(investment));
     }
-
-
-
 }

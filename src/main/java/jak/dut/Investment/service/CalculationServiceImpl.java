@@ -3,7 +3,6 @@ package jak.dut.Investment.service;
 import jak.dut.Investment.model.calculation.Calculation;
 import jak.dut.Investment.model.calculation.CalculationType;
 import jak.dut.Investment.model.calculation.ProfitCalculation;
-import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.repository.CalculotionRepo;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +42,7 @@ public class CalculationServiceImpl implements CalculationService {
         newCalculation.setInvestment(investmentService.getInvestmentById(investmentId));
         newCalculation.setCalculationType(calculationType);
         newCalculation.setProfit(profitCalculation.calculateProfit(newCalculation));
+        calculotionRepo.save(newCalculation);
         return newCalculation;
     }
 
