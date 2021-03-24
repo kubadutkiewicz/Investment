@@ -1,9 +1,11 @@
 package jak.dut.Investment.model.calculation;
 
+import java.math.BigDecimal;
+
 public class EndInvestmentCalculation implements CalculaltionAlgorithmStrategy {
 
     @Override
-    public Double calculation(Calculation calculation) {
+    public BigDecimal calculation(Calculation calculation) {
 //        Double value = calculation.getAmount();
 //        Double interest = calculation.getInvestment().getRate();
 //        LocalDate startDate = calculation.getInvestment().getStartInvestmentDate();

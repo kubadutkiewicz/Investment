@@ -7,6 +7,7 @@ import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.repository.CalculotionRepo;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class CalculationServiceImpl implements CalculationService {
     }
 
     @Override
-    public void addCalculation(Double amount, CalculationType calculationType, Investment investment) {
+    public void addCalculation(BigDecimal amount, CalculationType calculationType, Investment investment) {
         Calculation newCalculation = new Calculation();
         newCalculation.setAmount(amount);
         newCalculation.setCalculationType(calculationType);

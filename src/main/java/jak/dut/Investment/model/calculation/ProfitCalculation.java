@@ -3,6 +3,8 @@ package jak.dut.Investment.model.calculation;
 import jak.dut.Investment.model.calculation.resolver.CalculationResolver;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class ProfitCalculation {
 
@@ -12,11 +14,11 @@ public class ProfitCalculation {
         this.calculationResolver = calculationResolver;
     }
 
-    public Double calculateProfit(Calculation calculation) {
+    public BigDecimal calculateProfit(Calculation calculation) {
         CalculationType calculationType = calculation.getCalculationType();
 
         CalculaltionAlgorithmStrategy calculaltionAlgorithmStrategy = calculationResolver.resolve(calculationType);
-        Double profit = calculaltionAlgorithmStrategy.calculation(calculation);
+        BigDecimal profit = calculaltionAlgorithmStrategy.calculation(calculation);
 
         return profit;
     }

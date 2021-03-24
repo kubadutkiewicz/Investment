@@ -5,5 +5,5 @@ import jak.dut.Investment.model.calculation.CalculationType;
 
 public interface CalculationResolver {
 
-CalculaltionAlgorithmStrategy resolve(CalculationType calculationType);
+    CalculaltionAlgorithmStrategy resolve(CalculationType calculationType);
 }

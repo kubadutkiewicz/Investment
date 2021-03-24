@@ -6,15 +6,15 @@ import java.math.BigDecimal;
 
 public class CalculationDTO {
 
-    private final Double amount;
+    private final BigDecimal amount;
     private final CalculationType calculationType;
 
-    public CalculationDTO(Double amount, CalculationType calculationType) {
+    public CalculationDTO(BigDecimal amount, CalculationType calculationType) {
         this.amount = amount;
         this.calculationType = calculationType;
     }
 
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
