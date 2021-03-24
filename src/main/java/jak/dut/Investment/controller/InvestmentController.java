@@ -30,7 +30,7 @@ public class InvestmentController {
 
     @PostMapping
     public NewInvestmentDTO addInvestment(Investment investment) {
-        Investment addedInvestment = investmentService.addInvestment(investment);
+        investmentService.addInvestment(investment);
         NewInvestmentDTO newInvestmentDTO = setNewInvestmentDTO(investment);
         return newInvestmentDTO;
     }
@@ -40,8 +40,12 @@ public class InvestmentController {
         newInvestmentDTO.setId(investment.getId());
         newInvestmentDTO.setName(investment.getName());
         newInvestmentDTO.setRate(investment.getRate());
-        long days = ChronoUnit.DAYS.between(investment.getStartInvestmentDate(), investment.getEndInvestmentDate());
+        long days = getPeriodInDaysBetweenTwoDates(investment);
         newInvestmentDTO.setPeriodInDays(days);
         return newInvestmentDTO;
+    }
+
+    public long getPeriodInDaysBetweenTwoDates(Investment investment) {
+        return ChronoUnit.DAYS.between(investment.getStartInvestmentDate(), investment.getEndInvestmentDate());
     }
 }

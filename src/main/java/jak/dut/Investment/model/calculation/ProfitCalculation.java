@@ -1,7 +1,9 @@
 package jak.dut.Investment.model.calculation;
 
 import jak.dut.Investment.model.calculation.resolver.CalculationResolver;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProfitCalculation {
 
     private final CalculationResolver calculationResolver;

@@ -49,7 +49,7 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Override
     public Investment addInvestment(Investment investment) {
         investmentRepo.save(investment);
-        return investment;
+    return investment;
     }
 
 }

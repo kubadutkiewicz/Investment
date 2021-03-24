@@ -1,6 +1,7 @@
 package jak.dut.Investment.service;
 
 import jak.dut.Investment.dto.InvestmentDTO;
+import jak.dut.Investment.dto.NewInvestmentDTO;
 import jak.dut.Investment.model.investment.Investment;
 
 import java.util.List;
