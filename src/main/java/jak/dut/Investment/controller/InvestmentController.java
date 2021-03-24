@@ -1,6 +1,7 @@
 package jak.dut.Investment.controller;
 
 import jak.dut.Investment.dto.InvestmentDTO;
+import jak.dut.Investment.dto.NewInvestmentDTO;
 import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.service.InvestmentService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @RestController
@@ -28,9 +29,19 @@ public class InvestmentController {
     }
 
     @PostMapping
-    public void addInvestment(Investment investment) {
+    public NewInvestmentDTO addInvestment(Investment investment) {
         Investment addedInvestment = investmentService.addInvestment(investment);
-        Duration periodInDays = Duration.between(addedInvestment.getEndInvestmentDate(), addedInvestment.getStartInvestmentDate());
-        System.out.println("ID: " + addedInvestment.getId() + "Name: " + addedInvestment.getName() + "Interest: " + addedInvestment.getRate() + "Period in days: " + periodInDays);
+        NewInvestmentDTO newInvestmentDTO = setNewInvestmentDTO(investment);
+        return newInvestmentDTO;
+    }
+
+    private NewInvestmentDTO setNewInvestmentDTO(Investment investment) {
+        NewInvestmentDTO newInvestmentDTO = new NewInvestmentDTO();
+        newInvestmentDTO.setId(investment.getId());
+        newInvestmentDTO.setName(investment.getName());
+        newInvestmentDTO.setRate(investment.getRate());
+        long days = ChronoUnit.DAYS.between(investment.getStartInvestmentDate(), investment.getEndInvestmentDate());
+        newInvestmentDTO.setPeriodInDays(days);
+        return newInvestmentDTO;
     }
 }

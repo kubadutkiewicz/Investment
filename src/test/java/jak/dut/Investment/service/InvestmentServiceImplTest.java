@@ -5,8 +5,6 @@ import jak.dut.Investment.model.investment.CapitalizationPeriod;
 import jak.dut.Investment.model.investment.Investment;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,8 +13,8 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 class InvestmentServiceImplTest {
+
 
     @Test
     public void shouldAddInvestment() {
@@ -27,7 +25,7 @@ class InvestmentServiceImplTest {
 
         Assert.assertEquals("Lokata", investmentService.addInvestment(investment).getName());
         Assert.assertEquals(CapitalizationPeriod.YEAR, investmentService.addInvestment(investment).getCapitalizationPeriod());
-        Assert.assertEquals(LocalDate.parse("2021-04-01"), investmentService.addInvestment(investment).getStartInvestmentDate());
+        Assert.assertNotEquals("NajlepszaLokata", investmentService.addInvestment(investment).getName());
     }
 
     @Test

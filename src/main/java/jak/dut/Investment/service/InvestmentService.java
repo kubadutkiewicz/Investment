@@ -11,6 +11,6 @@ public interface InvestmentService {
 
     Investment getInvestmentById(Long investmentId);
 
-    Investment addInvestment(Investment Investment);
+    Investment addInvestment(Investment investment);
 
 }

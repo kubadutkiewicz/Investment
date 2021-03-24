@@ -1,12 +1,15 @@
 package jak.dut.Investment.service;
 
 import jak.dut.Investment.dto.InvestmentDTO;
+import jak.dut.Investment.dto.NewInvestmentDTO;
 import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.repository.InvestmentRepo;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,12 +48,8 @@ public class InvestmentServiceImpl implements InvestmentService {
 
     @Override
     public Investment addInvestment(Investment investment) {
-        investment.setName(investment.getName());
-        investment.setRate(investment.getRate());
-        investment.setCapitalizationPeriod(investment.getCapitalizationPeriod());
-        investment.setStartInvestmentDate(investment.getStartInvestmentDate());
-        investment.setEndInvestmentDate(investment.getEndInvestmentDate());
         investmentRepo.save(investment);
         return investment;
     }
+
 }

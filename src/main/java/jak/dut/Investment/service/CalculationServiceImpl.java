@@ -1,9 +1,7 @@
 package jak.dut.Investment.service;
 
-import jak.dut.Investment.dto.CalculationDTO;
 import jak.dut.Investment.model.calculation.Calculation;
 import jak.dut.Investment.model.calculation.CalculationType;
-import jak.dut.Investment.model.investment.CapitalizationPeriod;
 import jak.dut.Investment.repository.CalculotionRepo;
 import org.springframework.stereotype.Service;
 
