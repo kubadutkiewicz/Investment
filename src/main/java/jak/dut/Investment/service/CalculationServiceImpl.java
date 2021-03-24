@@ -2,6 +2,7 @@ package jak.dut.Investment.service;
 
 import jak.dut.Investment.model.calculation.Calculation;
 import jak.dut.Investment.model.calculation.CalculationType;
+import jak.dut.Investment.model.calculation.ProfitCalculation;
 import jak.dut.Investment.model.investment.Investment;
 import jak.dut.Investment.repository.CalculotionRepo;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,12 @@ public class CalculationServiceImpl implements CalculationService {
 
     private final CalculotionRepo calculotionRepo;
     private final InvestmentService investmentService;
+    private ProfitCalculation profitCalculation;
 
-    public CalculationServiceImpl(CalculotionRepo calculotionRepo, InvestmentService investmentService) {
+    public CalculationServiceImpl(CalculotionRepo calculotionRepo, InvestmentService investmentService, ProfitCalculation profitCalculation) {
         this.calculotionRepo = calculotionRepo;
         this.investmentService = investmentService;
+        this.profitCalculation = profitCalculation;
     }
 
     @Override
@@ -38,8 +41,7 @@ public class CalculationServiceImpl implements CalculationService {
         newCalculation.setCalculationDate(localDate);
         newCalculation.setInvestment(investment);
         newCalculation.setCalculationType(calculationType);
-
-        //TODO !!
+        newCalculation.setProfit(profitCalculation.calculateProfit(newCalculation));
     }
 
     private LocalDate getLocalDate() {
